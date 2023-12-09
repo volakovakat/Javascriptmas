@@ -1,11 +1,14 @@
-const countdownDisplay = document.getElementById("countdown-display")
+const countdownDisplay = document.querySelector("#countdown-display")
 
 function renderCountdown(){
-    const christmas = 25
+    let christmas = 24
     // Task:
-    // - Get today's date (you only need the day).
-    // - Calculate remaining days.
-    // - Display remaining days in countdownDisplay.
+    // - Get today's date (you only need the day):
+    let today = new Date();
+    // - Calculate remaining days:
+    let difference = christmas - today.getDate();
+    // - Display remaining days in countdownDisplay:
+    countdownDisplay.textContent = difference;
 }
  
 renderCountdown()
