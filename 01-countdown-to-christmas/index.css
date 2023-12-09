@@ -26,7 +26,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    background: var(--wine-red);
+    background: var(--bright-red);
     color: var(--snow);
     padding: 1em 2em;
     border-radius: 5px;
@@ -43,3 +43,12 @@ body {
     font-size: 100px;
     margin: 0;
 }
+
+.bg-gold {
+    background: var(--gold);
+}
+
+.bg-green {
+    background: var(--dark-green);
+}
+

@@ -1,5 +1,6 @@
 const countdownDisplay = document.querySelector("#countdown-display");
 const countdownDisplayFull = document.querySelector("#countdown-display-full");
+const countdownDisplayNewYear = document.querySelector("#countdown-display-new-year");
 
 const renderCountdown = () => {
     let christmas = 24
@@ -46,4 +47,33 @@ function renderCountdownFull(){
 
 renderCountdownFull();
 
-// - Add a countdown for another festival, your birthday, or Christmas 2022.
+// - Add a countdown for another festival - New Year:
+function renderCountdownNewYear(){
+  let newYear = new Date("Dec 31, 2023 23:59:59").getTime();
+
+  setInterval(() => {
+    let now = new Date().getTime();
+    let difference = newYear - now;
+
+    let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    const formatNumber = (number) => {
+      return number < 10 ? `0${number}` : number;
+    }
+
+    days = formatNumber(days);
+    hours = formatNumber(hours);
+    minutes = formatNumber(minutes);
+    seconds = formatNumber(seconds);
+
+
+    countdownDisplayNewYear.textContent =  `${days} : ${hours} : ${minutes} : ${seconds}`;
+    
+  }, 1000);
+
+}
+
+renderCountdownNewYear();
