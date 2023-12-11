@@ -1,4 +1,4 @@
-function calcTotalCandies(children, candy) {
+const calcTotalCandies = (children, candy) => {
   /** Challenge:
    * Some children have got some pieces of candy. They 
    * want to eat as much candy as they can but each 
@@ -13,9 +13,13 @@ function calcTotalCandies(children, candy) {
    * is 3*3 = 9. So the function calcTotalCandies should 
    * log out 9.
    **/
-   console.log(totalCandiesEaten);
-  };
-  
+
+  const candiesPerChild = Math.floor(candy / children);
+  const totalCandiesEaten = candiesPerChild * children;
+
+  console.log(totalCandiesEaten);
+};
+
   calcTotalCandies(3, 10) // expected output: 9
   calcTotalCandies(4, 20) // expected output: 20
   calcTotalCandies(6, 25) // expected output: 24
