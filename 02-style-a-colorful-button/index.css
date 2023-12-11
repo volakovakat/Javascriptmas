@@ -16,4 +16,30 @@ html, body {
   --grad-color5: #6a0d83;
 }
 
+.container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: var(--body-bg);
+}
 
+.button {
+  font-family: var(--font-family);
+  font-size: 32px;
+  color: var(--btn-color);
+  background: var(--btn-bg);
+  width: 10em;
+  height: 3.3em;
+
+  border: 4px solid;
+  
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, var(--grad-color3), var(--grad-color5));
+}
+
+.button:hover {
+  border: 5px solid; 
+  border-image-slice: 1;
+  color: var(--btn-color-hover);
+  border-image-source: linear-gradient(to right, var(--grad-color5), var(--grad-color3));
+}
